@@ -2,7 +2,7 @@
 
 namespace Nandoso.Models {
 	/// <summary>
-	/// Represents a menu item, which could be a special and/or contain other menu items.
+	/// Represents a menu item, which could be a special.
 	/// </summary>
 	public class MenuItem {
 		/// <summary>
@@ -33,12 +33,6 @@ namespace Nandoso.Models {
 		/// Whether this menu item is currently on special
 		/// </summary>
 		public bool Special {
-			get; set;
-		}
-		/// <summary>
-		/// Other menu items contained in this one as a combo; null if this is an a-la-carte item
-		/// </summary>
-		public ICollection<MenuItem> Combo {
 			get; set;
 		}
 	}
