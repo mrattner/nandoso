@@ -111,6 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="scripts\menu.js" />
     <Content Include="stylesheets\normalize.css" />
     <Content Include="stylesheets\skeleton.css" />
     <Content Include="Global.asax" />
@@ -141,8 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="scripts\" />
-    <Folder Include="views\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

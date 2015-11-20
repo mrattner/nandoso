@@ -8,9 +8,30 @@
 <body>
 	<h1>Nandoso</h1>
 
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Price</th>
+				<th>Special</th>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach: menuItems">
+			<tr>
+				<td data-bind="text: name"></td>
+				<td data-bind="text: description"></td>
+				<td data-bind="text: price"></td>
+				<td data-bind="text: isSpecial"></td>
+			</tr>
+		</tbody>
+	</table>
+
 	<!-- Resources -->
 	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css" />
-	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-3.3.0.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/menu.js"></script>
 </body>
 </html>
