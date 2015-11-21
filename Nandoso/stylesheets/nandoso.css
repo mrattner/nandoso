@@ -1,0 +1,60 @@
+﻿/* Colour palette from http://www.colourlovers.com/palette/919313/Papua_New_Guinea */
+body {
+  border: 1em solid #916449;
+}
+header {
+  margin-bottom: 2em;
+  background-color: #5e412f;
+  padding: 0.25em;
+}
+header img {
+  width: 6em;
+  height: 6em;
+}
+header h1 {
+  font-family: "Sigmar One", cursive;
+  margin-bottom: 0;
+  font-size: 5em;
+  font-weight: bold;
+  color: #f0a830;
+  line-height: 0;
+  display: inline;
+}
+header .tagline {
+  font-style: italic;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-left: 1em;
+  color: #fcebb6;
+  font-family: serif;
+}
+main,
+footer {
+  margin: 2em;
+  color: #5e412f;
+}
+main h2 {
+  color: #78c0a8;
+  font-weight: bold;
+}
+ul.menu-items {
+  list-style-type: none;
+}
+ul.menu-items li {
+  background: #f07818;
+  color: #fcebb6;
+  border-radius: 0.5em;
+  padding: 0.6em;
+}
+ul.menu-items h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+ul.menu-items .price {
+  font-size: 1.2em;
+  text-align: right;
+}
+ul.menu-items p {
+  margin-bottom: 0;
+}

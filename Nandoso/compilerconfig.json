@@ -1,0 +1,7 @@
+﻿[
+  {
+    "outputFile": "stylesheets/nandoso.css",
+    "inputFile": "stylesheets/nandoso.less",
+    "minify": { "enabled": false }
+  }
+]

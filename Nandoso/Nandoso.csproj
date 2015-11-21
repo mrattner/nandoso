@@ -111,7 +111,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
+    <Content Include="images\chicken.svg" />
     <Content Include="scripts\menu.js" />
+    <Content Include="stylesheets\nandoso.css">
+      <DependentUpon>nandoso.less</DependentUpon>
+    </Content>
     <Content Include="stylesheets\normalize.css" />
     <Content Include="stylesheets\skeleton.css" />
     <Content Include="Global.asax" />
@@ -131,8 +135,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\mrattner2 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\mrattner2 - Web Deploy.pubxml" />
+    <Content Include="stylesheets\nandoso.less" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
