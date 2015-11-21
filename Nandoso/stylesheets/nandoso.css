@@ -1,9 +1,12 @@
 ﻿/* Colour palette from http://www.colourlovers.com/palette/919313/Papua_New_Guinea */
 body {
-  border: 1em solid #916449;
+  background-color: #916449;
+}
+.page {
+  background-color: white;
+  margin: 1.5em;
 }
 header {
-  margin-bottom: 2em;
   background-color: #5e412f;
   padding: 0.25em;
 }
@@ -30,8 +33,9 @@ header .tagline {
 }
 main,
 footer {
-  margin: 2em;
   color: #5e412f;
+  background-color: white;
+  padding: 1em;
 }
 main h2 {
   color: #78c0a8;
@@ -57,4 +61,7 @@ ul.menu-items .price {
 }
 ul.menu-items p {
   margin-bottom: 0;
+}
+footer {
+  text-align: center;
 }

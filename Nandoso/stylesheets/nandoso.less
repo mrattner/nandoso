@@ -6,11 +6,15 @@
 @gold: #f0a830;
 
 body {
-	border: 1em solid lighten(@dark-brown, 15%);
+	background-color: lighten(@dark-brown, 15%);
+}
+
+.page {
+	background-color: white;
+	margin: 1.5em;
 }
 
 header {
-	margin-bottom: 2em;
 	background-color: @dark-brown;
 	padding: 0.25em;
 
@@ -40,8 +44,9 @@ header {
 }
 
 main, footer {
-	margin: 2em;
 	color: @dark-brown;
+	background-color: white;
+	padding: 1em;
 }
 
 main h2 {
@@ -73,4 +78,8 @@ ul.menu-items {
 	p {
 		margin-bottom: 0;
 	}
+}
+
+footer {
+	text-align: center;
 }

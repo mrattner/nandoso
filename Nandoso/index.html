@@ -6,45 +6,47 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 </head>
 <body>
-	<header>
-		<img src="images/chicken.svg" alt="Nandoso logo" />
-		<h1>Nandoso</h1>
-		<div class="tagline">Quality chicken, great atmosphere</div>
-	</header>
-	
-	<main>
-		<section>
-			<h2>Today's Specials</h2>
-			<ul class="menu-items" data-bind="foreach: specials">
-				<li>
-					<div class="row">
-						<h3 class="nine columns" data-bind="text: name"></h3>
-						<span class="price three columns" data-bind="text: price"></span>
-					</div>
-					<p data-bind="text: description"></p>
-				</li>
-			</ul>
-		</section>
-		
-		<section>
-			<h2>Our Menu</h2>
-			<ul class="menu-items" data-bind="foreach: menuItems">
-				<li>
-					<div class="row">
-						<h3 class="nine columns" data-bind="text: name"></h3>
-						<span class="price three columns" data-bind="text: price"></span>
-					</div>
-					<p data-bind="text: description"></p>
-				</li>
-			</ul>
-		</section>
-	</main>
-	
-	<footer>
-		<address>
-			Nandoso Restaurant | 1234 Some Road | Mt Eden | Auckland 8888
-		</address>
-	</footer>
+	<div class="page">
+		<header>
+			<img src="images/chicken.svg" alt="Nandoso logo" />
+			<h1>Nandoso</h1>
+			<div class="tagline">Quality chicken, great atmosphere</div>
+		</header>
+
+		<main>
+			<section>
+				<h2>Today's Specials</h2>
+				<ul class="menu-items" data-bind="foreach: specials">
+					<li>
+						<div class="row">
+							<h3 class="nine columns" data-bind="text: name"></h3>
+							<span class="price three columns" data-bind="text: price"></span>
+						</div>
+						<p data-bind="text: description"></p>
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Our Menu</h2>
+				<ul class="menu-items" data-bind="foreach: menuItems">
+					<li>
+						<div class="row">
+							<h3 class="nine columns" data-bind="text: name"></h3>
+							<span class="price three columns" data-bind="text: price"></span>
+						</div>
+						<p data-bind="text: description"></p>
+					</li>
+				</ul>
+			</section>
+		</main>
+
+		<footer>
+			<address>
+				Nandoso Restaurant | 1234 Some Road | Mt Eden | Auckland 8888
+			</address>
+		</footer>
+	</div>
 
 	<!-- Resources -->
 	<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" />
