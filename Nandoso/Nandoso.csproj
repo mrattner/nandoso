@@ -112,7 +112,13 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="images\chicken.svg" />
-    <Content Include="scripts\menu.js" />
+    <Content Include="scripts\jquery-2.1.4.js" />
+    <Content Include="scripts\knockout-3.4.0.js" />
+    <Content Include="scripts\main.js" />
+    <Content Include="scripts\MenuViewModel.js" />
+    <Content Include="scripts\require-2.1.22.js" />
+    <Content Include="scripts\domReady.js" />
+    <Content Include="scripts\text.js" />
     <Content Include="stylesheets\nandoso.css">
       <DependentUpon>nandoso.less</DependentUpon>
     </Content>
