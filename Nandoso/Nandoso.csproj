@@ -136,9 +136,11 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="images\chicken.svg" />
+    <Content Include="scripts\ChatViewModel.js" />
     <Content Include="scripts\jquery.signalR-2.2.0.js" />
     <Content Include="scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="scripts\knockout-3.4.0.debug.js" />
+    <Content Include="views\chat.html" />
     <Content Include="views\menu.html" />
     <Content Include="scripts\jquery-2.1.4.js" />
     <Content Include="scripts\main.js" />
@@ -162,9 +164,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Hubs\ChatHub.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\NandosoContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
