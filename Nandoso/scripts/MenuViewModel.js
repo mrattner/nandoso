@@ -1,4 +1,5 @@
-define(["knockout", "jquery"], function (ko, $) {
+define(["knockout", "jquery", "text!/views/menu.html"],
+function (ko, $, htmlString) {
 	/**
 	* Constructor for MenuItem object from server data.
 	*/
@@ -12,7 +13,7 @@ define(["knockout", "jquery"], function (ko, $) {
 	/**
 	 * The Menu view model.
 	 */
-	return function MenuViewModel () {
+	function Menu () {
 		this.menuItems = ko.observableArray([]);
 		this.specials = ko.observableArray([]);
 
@@ -28,5 +29,10 @@ define(["knockout", "jquery"], function (ko, $) {
 			this.specials(specialItems);
 			this.menuItems(items);
 		}.bind(this));
+	};
+
+	return {
+		viewModel: Menu,
+		template: htmlString
 	};
 });

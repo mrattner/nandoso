@@ -8,12 +8,13 @@
 		],
 		"knockout": [
 			"//cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min",
-			"knockout-3.4.0"
+			"knockout-3.4.0.debug"
 		]
 	}
 });
 
 // Wait for the DOM to load before executing the startup function
-require(["knockout", "MenuViewModel", "domReady!"], function (ko, MenuViewModel) {
-	ko.applyBindings(new MenuViewModel());
+require(["knockout", "domReady!"], function (ko) {
+	ko.components.register("menuView", { require: "./MenuViewModel" });
+	ko.applyBindings();
 });
