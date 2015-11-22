@@ -11,9 +11,23 @@
 			<img src="images/chicken.svg" alt="Nandoso logo" />
 			<h1>Nandoso</h1>
 			<div class="tagline">Quality chicken, great atmosphere</div>
+			<nav>
+				<ul>
+					<li>
+						<a href="#/menu" title="Our menu and daily specials">
+						Menu
+						</a>
+					</li>
+					<li>
+						<a href="#/chat" title="Chat in realtime with Nandoso employees">
+						Chat
+						</a>
+					</li>
+				</ul>
+			</nav>
 		</header>
 
-		<main data-bind="component: { name: 'chatView' }"></main>
+		<main data-bind="component: { name: route() }"></main>
 
 		<footer>
 			<address>

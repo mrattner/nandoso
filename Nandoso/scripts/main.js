@@ -10,6 +10,8 @@
 			"//cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min",
 			"knockout-3.4.0.debug"
 		],
+		"director": "director.min",
+
 		// SignalR config from http://stackoverflow.com/a/17605154
 		"signalr.core": "jquery.signalR-2.2.0.min",
 		"signalr.hubs": "/signalr/hubs?" // need query string for it to work
@@ -24,13 +26,17 @@
 		},
 		"signalr.hubs": {
 			deps: ["signalr.core"]
+		},
+		"director": {
+			exports: "Router"
 		}
 	}
 });
 
 // Wait for the DOM to load before executing the startup function
-require(["knockout", "domReady!"], function (ko) {
+require(["knockout", "router", "domReady!"], function (ko, router) {
 	ko.components.register("menuView", { require: "./MenuViewModel" });
 	ko.components.register("chatView", { require: "./ChatViewModel" });
-	ko.applyBindings();
+	// currentPage is an observable, so call it to get its value
+	ko.applyBindings({ route: router.currentPage });
 });
