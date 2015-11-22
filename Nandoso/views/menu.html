@@ -1,4 +1,8 @@
-﻿<section>
+﻿<p data-bind="text: loadingMsg"></p>
+
+<!-- Remember that isLoading is a function, not a boolean value :) -->
+<loading-icon data-bind="visible: isLoading()"></loading-icon>
+<section data-bind="visible: !loadingMsg()">
 	<h2>Today's Specials</h2>
 	<ul class="menu-items" data-bind="foreach: specials">
 		<li>
@@ -11,7 +15,7 @@
 	</ul>
 </section>
 
-<section>
+<section data-bind="visible: !loadingMsg()">
 	<h2>Our Menu</h2>
 	<ul class="menu-items" data-bind="foreach: menuItems">
 		<li>

@@ -37,6 +37,9 @@
 require(["knockout", "router", "domReady!"], function (ko, router) {
 	ko.components.register("menuView", { require: "./MenuViewModel" });
 	ko.components.register("chatView", { require: "./ChatViewModel" });
+	ko.components.register("loading-icon", {
+		template: { require: "text!/views/loading-icon.html" }
+	});
 	// currentPage is an observable, so call it to get its value
 	ko.applyBindings({ route: router.currentPage });
 });

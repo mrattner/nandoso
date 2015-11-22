@@ -13,12 +13,15 @@ function (ko, $, htmlString) {
 	/**
 	 * The Menu view model.
 	 */
-	function Menu () {
-		this.menuItems = ko.observableArray([]);
-		this.specials = ko.observableArray([]);
+	function Menu() {
+		var self = this; // To avoid having to bind "this"
+		self.menuItems = ko.observableArray([]);
+		self.specials = ko.observableArray([]);
+		self.loadingMsg = ko.observable("Loading today's delicious options...");
+		self.isLoading = ko.observable(true);
 
 		// Retrieve list of menu items from the server
-		$.getJSON("/api/MenuItem", function (data) {
+		$.getJSON("/api/MenuItem").success(function (data) {
 			var items = data.map(function (obj) {
 				return new MenuItem(obj);
 			});
@@ -26,9 +29,14 @@ function (ko, $, htmlString) {
 				return item.isSpecial;
 			});
 			// Update the observable arrays so the view updates
-			this.specials(specialItems);
-			this.menuItems(items);
-		}.bind(this));
+			self.specials(specialItems);
+			self.menuItems(items);
+			self.loadingMsg("");
+		}).error(function (err) {
+			self.loadingMsg("There was an error getting menu items. Check back later.");
+		}).complete(function () {
+			self.isLoading(false);
+		});
 	};
 
 	return {

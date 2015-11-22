@@ -143,6 +143,7 @@
     <Content Include="scripts\knockout-3.4.0.debug.js" />
     <Content Include="scripts\router.js" />
     <Content Include="views\chat.html" />
+    <Content Include="views\loading-icon.html" />
     <Content Include="views\menu.html" />
     <Content Include="scripts\jquery-2.1.4.js" />
     <Content Include="scripts\main.js" />
