@@ -67,7 +67,9 @@ namespace Nandoso.Models {
 		}
 
 		public NandosoContext () : base("name=NandosoContext") {
-			Database.SetInitializer(new MigrateDatabaseToLatestVersion<NandosoContext, Config>());
+			if (!Database.Exists("NandosoContext")) {
+				Database.SetInitializer(new MigrateDatabaseToLatestVersion<NandosoContext, Config>());
+			}
 		}
 
 		public System.Data.Entity.DbSet<Nandoso.Models.MenuItem> MenuItems {
