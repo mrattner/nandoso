@@ -5,81 +5,179 @@
 @orange: #f07818;
 @gold: #f0a830;
 
+/* Based on Skeleton.css: http://getskeleton.com/ */
+
 body {
 	background-color: lighten(@dark-brown, 15%);
 }
 
 .page {
 	background-color: white;
-	margin: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
 }
 
 header {
 	background-color: @dark-brown;
-	padding: 0.25em;
-
-	img {
-		width: 6em;
-		height: 6em;
-	}
+	padding: 0.25rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
 
 	h1 {
 		font-family: "Sigmar One", cursive;
-		margin-bottom: 0;
-		font-size: 5em;
-		font-weight: bold;
 		color: @gold;
+		margin: 0 1rem;
 		line-height: 0;
 		display: inline;
 	}
 
 	.tagline {
-		font-style: italic;
-		font-size: 1.5em;
-		font-weight: bold;
-		margin-left: 1em;
-		color: @pale-yellow;
 		font-family: serif;
+		font-style: oblique;
+		margin: 1rem 1rem 0.3rem;
+		color: @pale-yellow;
+	}
+}
+
+nav {
+	ul {
+		list-style-type: none;
+		li { display: inline; }
+		margin: 0 0 0.3rem;
+	}
+
+	a.button {
+		color: lighten(@orange, 15%);
+		margin: 0 0.5em;
+		padding-bottom: 0.2em;
+	}
+
+	a.current-page {
+		border-bottom-color: @gold;
+	}
+
+	a:active:not(.current-page),
+	a:hover:not(.current-page),
+	a:focus:not(.current-page) {
+		border-bottom-color: @turquoise;
 	}
 }
 
 main, footer {
 	color: @dark-brown;
 	background-color: white;
-	padding: 1em;
+	padding: 1rem;
 }
 
 main h2 {
 	color: @turquoise;
-	font-weight: bold;
 }
 
 ul.menu-items {
 	list-style-type: none;
+	padding: 0;
 
 	li {
 		background: @orange;
 		color: @pale-yellow;
-		border-radius: 0.5em;
-		padding: 0.6em;
-	}
+		border-radius: 0.5rem;
+		padding: 0.6rem;
+		margin-left: 0;
+		margin-bottom: 1.0rem;
 
-	h3 {
-		font-size: 1.2em;
-		font-weight: bold;
-		margin-bottom: 0.3em;
-	}
+		h4 {
+			float: left;
+			display: inline;
+			margin-top: 0.2em;
+		}
 
-	.price {
-		font-size: 1.2em;
-		text-align: right;
-	}
+		.special::before {
+			/* Add a filled star before specials */
+			content: "\2605 \00A0";
+		}
 
-	p {
-		margin-bottom: 0;
+		.price {
+			float: right;
+			display: inline;
+			margin-top: 0.2em;
+		}
+
+		p {
+			clear: both;
+		}
 	}
 }
 
 footer {
 	text-align: center;
+}
+
+/* Basic sizes for small screens */
+header img { width: 2.5rem; height: 2.5rem; }
+h1 { font-size: 2.5rem; }
+h2.tagline { display: none; }
+h2 { font-size: 1.3rem; }
+h3, h4, h5, h6 { font-size: 1rem; }
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+	header img { width: 3rem; height: 3rem; }
+	h1 { font-size: 3rem; }
+	h2.tagline { display:block; font-size: 1.2rem; }
+	h2 { font-size: 1.5rem; }
+	h3 { font-size: 1.3rem; }
+	h4, .price { font-size: 1.1rem; }
+	h5 { font-size: 1.1rem; }
+	h6 {font-size: 1rem; }
+	nav ul { padding: 0; }
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+	header img { width: 4rem; height: 4rem; }
+	h1 { font-size: 3.5rem; }
+	h2.tagline { font-size: 1.5rem; }
+	h3 { font-size: 1.5rem; }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+	header img { width: 5.5rem; height: 5.5rem; }
+	header h1 { font-size: 4.5rem; }
+	h4, .price { font-size: 1.3rem; }
+	.page { margin: 1.5rem; }
+	.menu-items li { max-width: 750px;}
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {
+	header img { width: 6.5rem; height: 6.5rem; }
+	header h1 { font-size: 5.5rem; }
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+/* Button style from Skeleton.css */
+.button, button {
+	display: inline-block;
+	padding: 0.5em;
+	text-align: center;
+	font-size: 1rem;
+	font-weight: 600;
+	line-height: 1.2em;
+	letter-spacing: .05rem;
+	text-decoration: none;
+	white-space: nowrap;
+	border-radius: 0.3rem;
+	cursor: pointer;
+	box-sizing: border-box;
+	border-style: solid;
+	border-width: 0.2em;
+	border-color: transparent;
 }

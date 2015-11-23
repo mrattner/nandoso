@@ -6,10 +6,8 @@
 	<h2>Today's Specials</h2>
 	<ul class="menu-items" data-bind="foreach: specials">
 		<li>
-			<div class="row">
-				<h3 class="nine columns" data-bind="text: name"></h3>
-				<span class="price three columns" data-bind="text: price"></span>
-			</div>
+			<h4 data-bind="text: name"></h4>
+			<span class="price" data-bind="text: price"></span>
 			<p data-bind="text: description"></p>
 		</li>
 	</ul>
@@ -19,10 +17,8 @@
 	<h2>Our Menu</h2>
 	<ul class="menu-items" data-bind="foreach: menuItems">
 		<li>
-			<div class="row">
-				<h3 class="nine columns" data-bind="text: name"></h3>
-				<span class="price three columns" data-bind="text: price"></span>
-			</div>
+			<h4 data-bind="text: name, css: { special: isSpecial }"></h4>
+			<span class="price" data-bind="text: price"></span>
 			<p data-bind="text: description"></p>
 		</li>
 	</ul>
