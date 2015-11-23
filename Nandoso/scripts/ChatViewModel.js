@@ -1,32 +1,58 @@
-﻿define(["jquery", "signalr.hubs", "text!/views/chat.html"],
-function ($, signalR, htmlString) {
+﻿define(["knockout", "jquery", "signalr.hubs", "text!/views/chat.html"],
+function (ko, $, signalR, htmlString) {
+	/**
+	* Constructor for chat message object.
+	*/
+	function ChatMessage (data) {
+		this.name = data.Name;
+		this.message = data.Message;
+	}
+
 	/**
 	 * The Chat view model.
 	 */
 	function Chat () {
-		// Declare a proxy to reference the hub. 
-		var chat = $.connection.chatHub;
-		// Create a function that the hub can call to broadcast messages.
-		chat.client.broadcastMessage = function (name, message) {
-			// Html encode display name and message. 
-			var encodedName = $('<div />').text(name).html();
-			var encodedMsg = $('<div />').text(message).html();
-			// Add the message to the page. 
-			$('#messages').append('<li><strong>' + encodedName
-				+ '</strong>:&nbsp;&nbsp;' + encodedMsg + '</li>');
+		var self = this;
+		self.messages = ko.observableArray();
+		// Ensure messages are updated no more than 50 times per second
+		self.messages.extend({ rateLimit: 50 });
+		self.validMsg = ko.observable();
+		self.msgBox = $("#message-box");
+		self.nameBox = $("#name-box");
+		var hub = $.connection.chatHub;
+
+		/**
+		 * Handler for starting chat.
+		 */
+		self.startChat = function () {
+			self.validMsg("Good job brain");
+			self.msgBox.focus();
 		};
-		// Get the user name and store it to prepend to messages.
-		$('#display-name').val(prompt('Enter your name:', ''));
-		// Set initial focus to message input box.  
-		$('#message').focus();
-		// Start the connection.
+
+		/**
+		 * Handler for submitting a chat message.
+		 */
+		self.sendMessage = function () {
+			var name = $("#name-box").val();
+			var message = self.msgBox.val();
+			hub.server.send(name, message);
+			self.msgBox.val("");
+		};
+
+		/**
+		 * Called when the hub broadcasts a message.
+		 */
+		hub.client.broadcastMessage = function (name, message) {
+			// You can call "push" directly on the observable array
+			self.messages.push(new ChatMessage({
+				Name: name,
+				Message: message
+			}));
+		};
+
+		// Start the connection--needs to be done last
 		$.connection.hub.start().done(function () {
-			$('#send').click(function () {
-				// Call the Send method on the hub. 
-				chat.server.send($('#display-name').val(), $('#message').val());
-				// Clear text box and reset focus for next comment. 
-				$('#message').val('').focus();
-			});
+			self.nameBox.focus();
 		});
 	};
 

@@ -8,7 +8,9 @@ namespace Nandoso.Hubs {
 	/// </summary>
 	public class ChatHub : Hub {
 		public void Send (string name, string message) {
-			Clients.All.broadcastMessage(name, message);
+			var encodedName = HttpUtility.HtmlEncode(name);
+			var encodedMsg = HttpUtility.HtmlEncode(message);
+			Clients.All.broadcastMessage(encodedName, encodedMsg);
 		}
 	}
 }

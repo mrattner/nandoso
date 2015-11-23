@@ -1,10 +1,25 @@
 ﻿<section>
 	<h2>Talk to us</h2>
-	<div class="chat-window">
-		<ul id="messages">
-		</ul>
+	<form data-bind="submit: startChat">
+		<label>
+			Display name:
+			<input type="text" id="name-box" />
+		</label>
+		<p class="validation message" data-bind="text: validMsg"></p>
+		<button type="submit">Start chatting</button>
+	</form>
+	<div>
+		<div class="chat-window">
+			<ul data-bind="foreach: messages">
+				<li>
+					<span class="chat-name" data-bind="html: name + ': '"></span>
+					<span data-bind="html: message"></span>
+				</li>
+			</ul>
+		</div>
+		<form data-bind="submit: sendMessage">
+			<input type="text" id="message-box" />
+			<button type="submit">Send</button>
+		</form>
 	</div>
-	<input type="text" id="message" />
-	<button id="send">Send</button>
-	<input type="hidden" id="display-name" />
 </section>

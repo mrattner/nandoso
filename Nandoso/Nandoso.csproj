@@ -142,6 +142,7 @@
     <Content Include="scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="scripts\knockout-3.4.0.debug.js" />
     <Content Include="scripts\router.js" />
+    <Content Include="scripts\xrayquire.js" />
     <Content Include="views\chat.html" />
     <Content Include="views\loading-icon.html" />
     <Content Include="views\menu.html" />

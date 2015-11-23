@@ -53,18 +53,20 @@ nav {
 
 	a.button {
 		color: lighten(@orange, 15%);
+		background-color: transparent;
 		margin: 0 0.5em;
 		padding-bottom: 0.2em;
 	}
 
-	a.current-page {
-		border-bottom-color: @turquoise;
+	a.button:active,
+	a.button:hover,
+	a.button:focus {
+		border-bottom-color: @pale-yellow;
+		background-color: transparent;
 	}
 
-	a:active:not(.current-page),
-	a:hover:not(.current-page),
-	a:focus:not(.current-page) {
-		border-bottom-color: @pale-yellow;
+	a.button.current-page {
+		border-bottom-color: @turquoise;
 	}
 }
 
@@ -118,6 +120,26 @@ p.message {
 	color: @turquoise;
 	font-weight: bold;
 	text-align: center;
+
+	.validation {
+		text-align: left;
+		color: @dark-brown;
+		font-style: italic;
+	}
+}
+
+.chat-window {
+	border: 1px solid @turquoise;
+	border-radius: 0.3rem;
+
+	ul {
+		list-style-type: none;
+		li { padding: 0; }
+	}
+
+	.chat-name {
+		font-weight: bold;
+	}
 }
 
 footer {
@@ -187,4 +209,10 @@ h3, h4, h5, h6 { font-size: 1rem; }
 	border-style: solid;
 	border-width: 0.2em;
 	border-color: transparent;
+	background-color: @orange;
+	color: lighten(@pale-yellow, 5%);
+}
+button:hover, .button:hover,
+button:active, .button:active {
+	background-color: @gold;
 }

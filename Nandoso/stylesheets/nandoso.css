@@ -45,16 +45,18 @@ nav ul li {
 }
 nav a.button {
   color: #f5a260;
+  background-color: transparent;
   margin: 0 0.5em;
   padding-bottom: 0.2em;
 }
-nav a.current-page {
-  border-bottom-color: #78c0a8;
-}
-nav a:active:not(.current-page),
-nav a:hover:not(.current-page),
-nav a:focus:not(.current-page) {
+nav a.button:active,
+nav a.button:hover,
+nav a.button:focus {
   border-bottom-color: #fcebb6;
+  background-color: transparent;
+}
+nav a.button.current-page {
+  border-bottom-color: #78c0a8;
 }
 main,
 footer {
@@ -99,6 +101,24 @@ p.message {
   color: #78c0a8;
   font-weight: bold;
   text-align: center;
+}
+p.message .validation {
+  text-align: left;
+  color: #5e412f;
+  font-style: italic;
+}
+.chat-window {
+  border: 1px solid #78c0a8;
+  border-radius: 0.3rem;
+}
+.chat-window ul {
+  list-style-type: none;
+}
+.chat-window ul li {
+  padding: 0;
+}
+.chat-window .chat-name {
+  font-weight: bold;
 }
 footer {
   text-align: center;
@@ -221,4 +241,12 @@ button {
   border-style: solid;
   border-width: 0.2em;
   border-color: transparent;
+  background-color: #f07818;
+  color: #fdf2ce;
+}
+button:hover,
+.button:hover,
+button:active,
+.button:active {
+  background-color: #f0a830;
 }
