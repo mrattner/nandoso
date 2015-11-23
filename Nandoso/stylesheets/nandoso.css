@@ -94,6 +94,12 @@ ul.menu-items li .price {
 ul.menu-items li p {
   clear: both;
 }
+p.message {
+  font-size: 1.2rem;
+  color: #78c0a8;
+  font-weight: bold;
+  text-align: center;
+}
 footer {
   text-align: center;
 }
