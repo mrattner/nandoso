@@ -120,21 +120,34 @@ p.message {
 	color: @turquoise;
 	font-weight: bold;
 	text-align: center;
+}
 
-	.validation {
-		text-align: left;
-		color: @dark-brown;
-		font-style: italic;
+form {
+	label {
+		font-weight: bold;
+	}
+	input {
+		margin: 1rem 0.5rem;
 	}
 }
 
 .chat-window {
 	border: 1px solid @turquoise;
 	border-radius: 0.3rem;
+	height: 10em;
+	overflow-y: scroll;
+	word-wrap: break-word;
+	padding: 0.6em;
+	margin-top: 1em;
 
 	ul {
 		list-style-type: none;
-		li { padding: 0; }
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 0.3em;
+		}
 	}
 
 	.chat-name {
@@ -180,7 +193,7 @@ h3, h4, h5, h6 { font-size: 1rem; }
 	header h1 { font-size: 4.5rem; }
 	h4, .price { font-size: 1.3rem; }
 	.page { margin: 1.5rem; }
-	.menu-items li { max-width: 750px;}
+	.menu-items li, .chat-window { max-width: 750px;}
 }
 
 /* Larger than desktop */

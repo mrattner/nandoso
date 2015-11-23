@@ -1,15 +1,18 @@
 ﻿<section>
 	<h2>Talk to us</h2>
-	<form data-bind="submit: startChat">
+	<form data-bind="submit: startChat, visible: !displayName()">
 		<label>
 			Display name:
-			<input type="text" id="name-box" />
+			<input type="text" data-bind="value: displayName, hasFocus: true" required />
 		</label>
-		<p class="validation message" data-bind="text: validMsg"></p>
+		<br />
 		<button type="submit">Start chatting</button>
 	</form>
 	<div>
 		<div class="chat-window">
+			<p class="message" data-bind="visible: messages().length === 0">
+			No one has posted any messages since this page was loaded.
+			</p>
 			<ul data-bind="foreach: messages">
 				<li>
 					<span class="chat-name" data-bind="html: name + ': '"></span>
@@ -17,7 +20,8 @@
 				</li>
 			</ul>
 		</div>
-		<form data-bind="submit: sendMessage">
+		<form data-bind="submit: sendMessage, visible: displayName">
+			<label for="message-box" data-bind="text: displayName"></label>:
 			<input type="text" id="message-box" />
 			<button type="submit">Send</button>
 		</form>

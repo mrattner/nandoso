@@ -14,18 +14,17 @@ function (ko, $, signalR, htmlString) {
 	function Chat () {
 		var self = this;
 		self.messages = ko.observableArray();
+		self.displayName = ko.observable();
 		// Ensure messages are updated no more than 50 times per second
 		self.messages.extend({ rateLimit: 50 });
-		self.validMsg = ko.observable();
 		self.msgBox = $("#message-box");
-		self.nameBox = $("#name-box");
 		var hub = $.connection.chatHub;
 
 		/**
 		 * Handler for starting chat.
 		 */
 		self.startChat = function () {
-			self.validMsg("Good job brain");
+			// TODO: hide name form
 			self.msgBox.focus();
 		};
 
@@ -33,8 +32,8 @@ function (ko, $, signalR, htmlString) {
 		 * Handler for submitting a chat message.
 		 */
 		self.sendMessage = function () {
-			var name = $("#name-box").val();
 			var message = self.msgBox.val();
+			var name = self.displayName();
 			hub.server.send(name, message);
 			self.msgBox.val("");
 		};
@@ -51,9 +50,7 @@ function (ko, $, signalR, htmlString) {
 		};
 
 		// Start the connection--needs to be done last
-		$.connection.hub.start().done(function () {
-			self.nameBox.focus();
-		});
+		$.connection.hub.start().done(function () {});
 	};
 
 	return {
