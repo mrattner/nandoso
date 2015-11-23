@@ -17,12 +17,14 @@
 			<nav>
 				<ul>
 					<li>
-						<a class="button" href="#/menu" title="Our menu and daily specials">
+						<a class="button" data-bind="css: { 'current-page': route() === 'menu' }"
+						   href="#/menu" title="Our menu and daily specials">
 							Menu
 						</a>
 					</li>
 					<li>
-						<a class="button" href="#/chat" title="Chat in realtime with Nandoso employees">
+						<a class="button" data-bind="css: { 'current-page': route() === 'chat' }"
+						   href="#/chat" title="Chat in realtime with Nandoso employees">
 							Chat
 						</a>
 					</li>
@@ -30,7 +32,7 @@
 			</nav>
 		</header>
 
-		<main data-bind="component: { name: route() }"></main>
+		<main data-bind="component: { name: route() + 'View' }"></main>
 
 		<footer>
 			<address>

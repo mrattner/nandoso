@@ -49,12 +49,12 @@ nav a.button {
   padding-bottom: 0.2em;
 }
 nav a.current-page {
-  border-bottom-color: #f0a830;
+  border-bottom-color: #78c0a8;
 }
 nav a:active:not(.current-page),
 nav a:hover:not(.current-page),
 nav a:focus:not(.current-page) {
-  border-bottom-color: #78c0a8;
+  border-bottom-color: #fcebb6;
 }
 main,
 footer {

@@ -5,12 +5,12 @@ function (ko, director) {
 	 */
 	function RouterConfig() {
 		var self = this; // To avoid having to bind "this"
-		self.currentPage = ko.observable("menuView");
+		self.currentRoute = ko.observable("menu");
 
 		var routes = {
-			"/":     function () { self.currentPage("menuView") },
-			"/menu": function () { self.currentPage("menuView") },
-			"/chat": function () { self.currentPage("chatView") }
+			"/":     function () { self.currentRoute("menu") },
+			"/menu": function () { self.currentRoute("menu") },
+			"/chat": function () { self.currentRoute("chat") }
 		};
 		var router = director(routes);
 		router.init();
