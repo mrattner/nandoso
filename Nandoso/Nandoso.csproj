@@ -136,19 +136,18 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="images\chicken.svg" />
-    <Content Include="scripts\ChatViewModel.js" />
+    <Content Include="scripts\vm\ChatViewModel.js" />
     <Content Include="scripts\director.min.js" />
     <Content Include="scripts\jquery.signalR-2.2.0.js" />
     <Content Include="scripts\jquery.signalR-2.2.0.min.js" />
     <Content Include="scripts\knockout-3.4.0.debug.js" />
     <Content Include="scripts\router.js" />
-    <Content Include="scripts\xrayquire.js" />
     <Content Include="views\chat.html" />
     <Content Include="views\loading-icon.html" />
     <Content Include="views\menu.html" />
     <Content Include="scripts\jquery-2.1.4.js" />
     <Content Include="scripts\main.js" />
-    <Content Include="scripts\MenuViewModel.js" />
+    <Content Include="scripts\vm\MenuViewModel.js" />
     <Content Include="scripts\require-2.1.22.js" />
     <Content Include="scripts\domReady.js" />
     <Content Include="scripts\text.js" />

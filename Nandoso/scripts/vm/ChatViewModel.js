@@ -24,7 +24,6 @@ function (ko, $, signalR, htmlString) {
 		 * Handler for starting chat.
 		 */
 		self.startChat = function () {
-			// TODO: hide name form
 			self.msgBox.focus();
 		};
 

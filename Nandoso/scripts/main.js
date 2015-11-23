@@ -35,8 +35,8 @@
 
 // Wait for the DOM to load before executing the startup function
 require(["knockout", "router", "domReady!"], function (ko, router) {
-	ko.components.register("menuView", { require: "./MenuViewModel" });
-	ko.components.register("chatView", { require: "./ChatViewModel" });
+	ko.components.register("menuView", { require: "./vm/MenuViewModel" });
+	ko.components.register("chatView", { require: "./vm/ChatViewModel" });
 	ko.components.register("loading-icon", {
 		template: { require: "text!/views/loading-icon.html" }
 	});
